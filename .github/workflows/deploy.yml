@@ -13,12 +13,13 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout your repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Set up Node.js v22
         uses: actions/setup-node@v4
         with:
@@ -31,23 +32,22 @@ jobs:
           ref: v4
           path: quartz
 
-      - name: Remove unwanted folder from vault
-        run: rm -rf "./DND/Sessies"
-
       - name: Install Quartz dependencies
         working-directory: quartz
         run: npm install
 
-      - name: Copy your Vault into Quartz content
+      - name: Remove DND/Sessies folder
+        run: rm -rf "./DND/Sessies"
+
+      - name: Copy vault contents into Quartz
         run: |
           rm -rf quartz/content
           mkdir -p quartz/content
-          cp -R . DONT_COPY_ME # placeholder, see below
-          cp -R DND quartz/content
+          rsync -a DND/ quartz/content/
 
-      - name: Build site via Quartz
+      - name: Build the site with Quartz
         working-directory: quartz
-        run: npx quartz build --directory=content
+        run: npx quartz build --directory content
 
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
@@ -57,6 +57,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
