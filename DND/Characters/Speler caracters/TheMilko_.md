@@ -1,0 +1,14 @@
+**Level:** 1
+**Species:** [[Aarakocra]]
+**Sex:** ?
+**Class:** Rogue 
+**Background:** Criminal/spy 
+**Alignment:** ?  
+**Eyes:** ? 
+**Size:** Medium 
+**Height:** ? 
+**Faith:** ?   
+**Hair:** ? 
+**Skin:** ? 
+**Age:** ? 
+**Weight:** ? 

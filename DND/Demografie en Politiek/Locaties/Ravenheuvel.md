@@ -1,0 +1,3 @@
+Op de ravenheuvel lag tijdens [[Sessie 1]] [[de zwarte helm|de zwarte helm van Hades]].  Op de ravenheuvel leeft een oude Goblin wizard, die alleen goblins spreekt, en als er mensen naar hem toe komen, stuurt hij zijn kinderen erop af. De spelers overleefden de goblins en vermoorden ze allemaal, behalve de tovenaar zelf. 
+
+Op ravenheuvel staat een oude toren met daarvoor een statief waarop de helm staat. De Goblin wizard is de beschermer van de helm.

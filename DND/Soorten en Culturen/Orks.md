@@ -1,0 +1,1 @@
+Orks zijn mens-achtigen met een donkere huid. Ze leven vaak in grote kampen, en komen vaak s'nachts tevoorschijn. Ze leven vooral in de [[Ravager's reach]] in de stad [[Grum]].

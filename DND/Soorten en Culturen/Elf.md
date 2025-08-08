@@ -1,0 +1,1 @@
+De meeste elven van deze wereld zijn na de [[olympiërs-titanen oorlog]] verhuisd naar het [[grote donkere woud]], en wonen daar in [[Growlin]]. Er zijn ook elven die in kleine dorpjes om [[Growlin]] heen wonen. 

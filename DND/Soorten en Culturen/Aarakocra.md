@@ -1,0 +1,1 @@
+Aarakocra's komen niet veel voor in de wereld van Aleros. Er zijn geruchten dat er eens in het jaar een gigantische groep Aarakocra's over [[Ravenheuvel]] heen vliegt.

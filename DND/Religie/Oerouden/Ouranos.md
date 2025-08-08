@@ -1,0 +1,1 @@
+Ouranos is de hemel in Aleros. Nadat hij gecastreerd was door zijn zoon chronos, was hij zijn lichaam verloren, maar hij bestaat nog steeds. Hij gaat elke dag door, proberen om de lucht te laten vallen, maar [[Atlas]] draagt het nog steeds.
