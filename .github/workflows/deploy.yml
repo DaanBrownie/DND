@@ -1,4 +1,4 @@
-name: Deploy Quartz site to GitHub Pages
+name: Deploy Obsidian Vault via Quartz
 
 on:
   push:
@@ -15,36 +15,44 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout your repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Remove DND/Sessies folder
+      - name: Checkout Quartz v4
+        uses: actions/checkout@v4
+        with:
+          repository: jackyzha0/quartz
+          ref: v4
+          path: quartz
+
+      - name: Remove unwanted folder from vault
         run: rm -rf "./DND/Sessies"
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install dependencies
+      - name: Install Quartz dependencies
+        working-directory: quartz
         run: npm install
 
-      - name: Build with Quartz
-        # If your vault is at the root, change --directory accordingly.
-        run: npx quartz build --directory=DND
+      - name: Copy your Vault into Quartz content
+        run: |
+          rm -rf quartz/content
+          mkdir -p quartz/content
+          cp -R . DONT_COPY_ME # placeholder, see below
+          cp -R DND quartz/content
 
-      - name: Upload artifact
+      - name: Build site via Quartz
+        working-directory: quartz
+        run: npx quartz build --directory=content
+
+      - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: quartz/public
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
